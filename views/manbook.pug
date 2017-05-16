@@ -25,9 +25,8 @@ mixin loginPanel
 
 mixin booklistgrp
     each book in allBookList
-        +list-group-links([{text: book.bookName, url:"#"+book._id}])
-        +modal(book.bookName, book._id)
-            p Book Name: book.bookName
-            p Author: book.Authro
-            p Edition: book.Edition
-            p Published year: book.PublishYear
+        +list-group-links([{text: book.bookName, url:"#"}])
+        p Book Name: book.bookName
+        p Author: book.Authro
+        p Edition: book.Edition
+        p Published year: book.PublishYear
