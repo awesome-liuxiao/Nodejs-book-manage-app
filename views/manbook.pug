@@ -1,0 +1,33 @@
+extends ../node_modules/pug-bootstrap/_bootstrap
+block body
+    block fstPanel
+        +panel-info("This is a book management system")
+            h3 The functions of this web app is listed as follows
+            p 1. user authentation
+            p 2. add new book into database
+            p 3. remove book from dababase
+    block navtabs
+        +tab-list(["Home", "BookList", "Login", "ContactMe"], 0)
+            +tab("Home", "active")
+                h3 Introduction
+                p This is a test web app developed based on Node.js and express.
+                p The pug template language and Bootstrap framework are also used.
+            +tab("BookList")
+                p books here.
+                +booklistgrp
+            +tab("Login")
+                +loginPanel
+mixin loginPanel
+    form(method='POST' action='/manbook/login')
+        +input("text","txtID","ID","ID")
+        +input("password","txtPS","Password","Password")
+        +submit("Login")
+
+mixin booklistgrp
+    each book in allBookList
+        +list-group-links([{text: book.bookName, url:"#"+book._id}])
+        +modal(book.bookName, book._id)
+            p Book Name: book.bookName
+            p Author: book.Authro
+            p Edition: book.Edition
+            p Published year: book.PublishYear

@@ -1,0 +1,41 @@
+.col0 {
+  background: #0ff;
+}
+.col1 {
+  background: #00f;
+}
+.col2 {
+  background: #f0f;
+}
+.col3 {
+  background: #008000;
+}
+.col4 {
+  background: #0f0;
+}
+.col5 {
+  background: #800000;
+}
+.col6 {
+  background: #000080;
+}
+.col7 {
+  background: #808000;
+}
+.col8 {
+  background: #800080;
+}
+.col9 {
+  background: #f00;
+}
+.col10 {
+  background: #008080;
+}
+.col11 {
+  background: #ff0;
+}
+.col-content {
+  min-height: 50px;
+  text-align: center;
+  font-size: 25px;
+}

@@ -1,0 +1,76 @@
+extends ../node_modules/pug-bootstrap/_bootstrap
+include ../node_modules/pug-bootstrap/components/tooltips
+block body
+    block mytabs
+        +tab-list(["Home","Profile","Messages","Settings"],0)
+            +tab("Home", "active")
+                h1 Home
+                p This is Home tab
+            +tab("Profile")
+                h1 Profile
+                p This is Profile tab
+            +tab("Messages")
+                h1 Messages
+                p This is Messages tab
+            +tab("Settings")
+                h1 Settings
+                p This is Settings tab
+    mixin mypanel
+        +panel-info("info Panel")
+            p myPanel
+    +mypanel
+    block mytooltip
+         +tooltip("Top tooltip", "Tooltip on the top", "top")
+         +tooltip-top("This is a tooltip on the left")
+         +tooltip-right("This is a tooltip on the right")
+    block mydropdowns
+        +dropdown("My Dropdown Menu",[
+            {text:"Bootstrap",url:"http://www.getbootstrap.com"},
+            {text:"JADE",url:"http://www.jade-lang.com"},
+            {text:"NodeJS",url:"http://www.nodejs.org"}
+        ])
+    block mytoggles
+        +toggle-primary("Single toggle")
+        +toggle-default("Single toggle")
+        +toggle-info("Single toggle")
+        +toggle-success("Single toggle")
+        +toggle-warning("Single toggle")
+        +toggle-danger("Single toggle")
+    block mymodal
+        button.btn.btn-primary(data-toggle="modal",data-target="#myModal") Launch demo modal
+        +modal("Modal title","myModal")
+            p This is modal content
+    block mycollapse
+        +accordion("sample")
+            +accordion-item-primary("Title1", "sample", "true")
+                | This is first accordion content
+    block myradio
+        +radio-toggle-default("radOptions6",[{caption:"Radio1"},{caption:"Radio2"},{caption:"Radio3"}],0)
+    block mytable
+        +table([],[["1","Mark","Otto","@mdo"],["2","Jacob","Thornton","@fat"],["3","Larry","the Bird","@twitter"]],"table-striped table-bordered")
+    block myalert
+        +alert-info("<strong>Well done!</strong> You successfully read this important alert message.")
+    block myforms
+        +input("text","txtName","Name","Name")
+        +checkbox("Check me out")
+        +radio("My Radio Button")
+        +submit("Register")
+        +input-group("$","%")
+            +input-simple("text","txtName","Name","Name")
+        +input-group("$")
+            +input-simple("text","txtName","Name","Name")
+        +input-group("","%")
+            +input-simple("text","txtName","Name","Name")
+        +checkbox-inline("1")
+        +checkbox-inline("2")
+        +checkbox-inline("3")
+        <br \>
+        +radio-inline("1")
+        +radio-inline("2")
+        +radio-inline("3")
+        <br \>
+    mixin mylistGrp
+        +list-group-links([{text:"Cras justo odio",url:"#"},{text:"Cras justo odio",url:"#"},{text:"Cras justo odio",url:"#"},{text:"Cras justo odio",url:"#"},{text:"Cras justo odio",url:"#"},],0)
+    +mylistGrp
+    block myProgressBar
+        +progress-bar(60)
