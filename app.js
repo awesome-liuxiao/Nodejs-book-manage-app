@@ -12,6 +12,7 @@ var users = require('./routes/users');
 var something = require('./routes/something');
 var manbook = require('./routes/manbook');
 var app = express();
+var login = require('./routes/login')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,6 +32,7 @@ app.use('/users', users);
 //new added
 app.use('/something', something);
 app.use('/manbook', manbook);
+app.use('/manbook/login', login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
