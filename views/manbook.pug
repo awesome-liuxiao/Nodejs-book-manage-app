@@ -21,8 +21,8 @@ block body
                 p email: liuxiao at pnu dot edu
 mixin loginPanel
     form(method='POST' action='/manbook/login')
-        +input("text","txtID","ID","ID")
-        +input("password","txtPS","Password","Password")
+        +input("text","txtID","ID",{name: "textID"},"ID")
+        +input("password","txtPS","Password",{name: "textPS"},"Password")
         +submit("Login")
 
 mixin booklistgrp
