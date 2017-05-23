@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
                 allBookList: allBookList,
                 title: 'Book management site'
             })
-            console.log(allBookList);
+            //console.log(allBookList);
         })
     })
 })
