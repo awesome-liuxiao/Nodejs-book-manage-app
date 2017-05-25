@@ -3,8 +3,12 @@ var router = express.Router()
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var url = 'mongodb://localhost:27017/books'
+var sess = require('express-session')
+var loginUser = sess.loginUser
+var app = express()
 
 router.get('/', function(req, res, next) {
+    console.log('loginUser is '+loginUser);
     var allBookList = []
     MongoClient.connect(url, function(err, db) {
         assert.equal(null, err);

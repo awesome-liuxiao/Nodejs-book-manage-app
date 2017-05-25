@@ -1,6 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var session = require('express-session')
+var app = express()
 
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
@@ -28,6 +29,7 @@ router.post('/', function(req, res, next) {
                     }
                 }, function() {
                     db.close();
+                    app.use(session({secrete:id}))
                     console.log('went here.');
                     res.redirect('/manbook');
                 })
