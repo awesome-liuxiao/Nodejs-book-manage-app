@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-var Promise = require('promise')
+var session = require('express-session')
 
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
