@@ -29,7 +29,8 @@ router.post('/', function(req, res, next) {
                     }
                 }, function() {
                     db.close();
-                    app.use(session({secrete:id}))
+                    app.use(session({secrete:'2314343412323123'}))
+                    req.session.
                     console.log('went here.');
                     res.redirect('/manbook');
                 })
